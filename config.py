@@ -15,6 +15,8 @@ COLORS = {
     "Reddit":   0xFF4500,  # reddit orange-red
     "Dust2":    0x8B5E3C,  # dust2 sand
     "Twitter":  0x1DA1F2,  # twitter/X blue
+    "Dexerto":  0xE8272A,  # dexerto red
+    "DotEsports": 0x00B4D8,  # dot esports blue
     "default":  0x7289DA,  # discord blurple
 }
 
@@ -66,6 +68,17 @@ RSS_FEEDS = [
         "name": "Dust2.us",
         "url": "https://dust2.us/rss",
         "color": "Dust2",
+    },
+    # ── News sites (additional) ───────────────────────────────────────────
+    {
+        "name": "Dot Esports",
+        "url": "https://dotesports.com/feed",
+        "color": "DotEsports",
+    },
+    {
+        "name": "Dexerto CS2",
+        "url": "https://www.dexerto.com/feed/?category=counter-strike",
+        "color": "Dexerto",
     },
     # ── Reddit ────────────────────────────────────────────────────────────
     {
