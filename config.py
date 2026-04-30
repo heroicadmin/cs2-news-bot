@@ -50,6 +50,12 @@ TWITTER_ACCOUNTS = [
     ("BIG_CS",         "X: @BIG_CS"),
     ("Astralis",       "X: @Astralis"),
     ("mousesports",    "X: @mousesports"),
+    # Weird / cultural news
+    ("BoredPanda",     "X: @BoredPanda"),
+    ("LADbible",       "X: @LADbible"),
+    ("UberFacts",      "X: @UberFacts"),
+    ("IFLScience",     "X: @IFLScience"),
+    ("WeirdHistory",   "X: @WeirdHistory"),
 ]
 
 RSS_FEEDS = [
@@ -82,7 +88,7 @@ RSS_FEEDS = [
         "color": "Dexerto",
         "keywords": ["CS2", "Counter-Strike", "CSGO", "cs2"],
     },
-    # ── Reddit ────────────────────────────────────────────────────────────
+    # ── Reddit (CS2) ─────────────────────────────────────────────────────
     {
         "name": "r/GlobalOffensive",
         "url": "https://www.reddit.com/r/GlobalOffensive/new/.rss",
@@ -91,6 +97,32 @@ RSS_FEEDS = [
     {
         "name": "r/cs2",
         "url": "https://www.reddit.com/r/cs2/new/.rss",
+        "color": "Reddit",
+    },
+    # ── Reddit (weird / cultural) ─────────────────────────────────────────
+    {
+        "name": "r/nottheonion",
+        "url": "https://www.reddit.com/r/nottheonion/new/.rss",
+        "color": "Reddit",
+    },
+    {
+        "name": "r/interestingasfuck",
+        "url": "https://www.reddit.com/r/interestingasfuck/new/.rss",
+        "color": "Reddit",
+    },
+    {
+        "name": "r/mildlyinteresting",
+        "url": "https://www.reddit.com/r/mildlyinteresting/new/.rss",
+        "color": "Reddit",
+    },
+    {
+        "name": "r/Damnthatsinteresting",
+        "url": "https://www.reddit.com/r/Damnthatsinteresting/new/.rss",
+        "color": "Reddit",
+    },
+    {
+        "name": "r/WeirdNews",
+        "url": "https://www.reddit.com/r/WeirdNews/new/.rss",
         "color": "Reddit",
     },
     # ── X / Twitter (via rss.app — reliable, requires free account) ───────
