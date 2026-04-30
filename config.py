@@ -51,6 +51,7 @@ TWITTER_ACCOUNTS = [
     ("Astralis",       "X: @Astralis"),
     ("mousesports",    "X: @mousesports"),
     # Weird / cultural news
+    ("viewsceo",       "X: @viewsceo"),
     ("BoredPanda",     "X: @BoredPanda"),
     ("LADbible",       "X: @LADbible"),
     ("UberFacts",      "X: @UberFacts"),
