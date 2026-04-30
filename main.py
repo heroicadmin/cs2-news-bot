@@ -21,18 +21,25 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+def _matches_keywords(item, keywords: list[str]) -> bool:
+    text = (item.title + " " + (item.summary or "")).lower()
+    return any(kw.lower() in text for kw in keywords)
+
+
 def _all_feeds():
-    """Yield (fetch_fn, args) for every configured source."""
+    """Yield (fetch_fn, args, keywords) for every configured source."""
     for feed_cfg in RSS_FEEDS:
-        yield fetch_feed, (feed_cfg,)
+        yield fetch_feed, (feed_cfg,), feed_cfg.get("keywords")
     for handle, display_name in TWITTER_ACCOUNTS:
-        yield fetch_twitter, (handle, display_name, NITTER_INSTANCES)
+        yield fetch_twitter, (handle, display_name, NITTER_INSTANCES), None
 
 
 def poll_all_feeds() -> None:
     total_new = 0
-    for fetch_fn, args in _all_feeds():
+    for fetch_fn, args, keywords in _all_feeds():
         items = fetch_fn(*args)
+        if keywords:
+            items = [i for i in items if _matches_keywords(i, keywords)]
         new_items = [item for item in items if not is_seen(item.id)]
         if new_items:
             logger.info("[%s] %d new item(s)", new_items[0].source, len(new_items))
@@ -50,7 +57,7 @@ def poll_all_feeds() -> None:
 def seed_seen_on_startup() -> None:
     logger.info("Seeding existing feed items so we don't flood Discord on first run...")
     seeded = 0
-    for fetch_fn, args in _all_feeds():
+    for fetch_fn, args, _keywords in _all_feeds():
         items = fetch_fn(*args)
         for item in items:
             if not is_seen(item.id):

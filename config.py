@@ -74,11 +74,13 @@ RSS_FEEDS = [
         "name": "Dot Esports",
         "url": "https://dotesports.com/feed",
         "color": "DotEsports",
+        "keywords": ["CS2", "Counter-Strike", "CSGO", "cs2"],
     },
     {
         "name": "Dexerto CS2",
         "url": "https://www.dexerto.com/feed/?category=counter-strike",
         "color": "Dexerto",
+        "keywords": ["CS2", "Counter-Strike", "CSGO", "cs2"],
     },
     # ── Reddit ────────────────────────────────────────────────────────────
     {
