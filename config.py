@@ -33,27 +33,9 @@ NITTER_INSTANCES = [
     "https://nitter.pussthecat.org",
 ]
 
-# X accounts to monitor (handles only — the bot tries each Nitter instance)
+# X accounts to monitor via Nitter (fallback — used when no rss.app feed exists)
 TWITTER_ACCOUNTS = [
-    # News & community
-    ("Ozzny_CS2",      "X: @Ozzny_CS2"),
-    ("CounterStrike",  "X: @CounterStrike"),
-    ("HLTV_org",       "X: @HLTV_org"),
-    # Tournaments & platforms
-    ("ESL_CS",         "X: @ESL_CS"),
-    ("FACEIT",         "X: @FACEIT"),
-    # Teams
-    ("NatusVincere",   "X: @NatusVincere"),
-    ("FaZeClan",       "X: @FaZeClan"),
-    ("G2esports",      "X: @G2esports"),
-    ("TeamVitality",   "X: @TeamVitality"),
-    ("BIG_CS",         "X: @BIG_CS"),
-    ("Astralis",       "X: @Astralis"),
-    ("mousesports",    "X: @mousesports"),
-    # Weird / cultural news
-    ("viewsceo",       "X: @viewsceo"),
-    ("BoredPanda",     "X: @BoredPanda"),
-    ("LADbible",       "X: @LADbible"),
+    # Weird / cultural news (no rss.app feed yet)
     ("UberFacts",      "X: @UberFacts"),
     ("IFLScience",     "X: @IFLScience"),
     ("WeirdHistory",   "X: @WeirdHistory"),
@@ -126,15 +108,24 @@ RSS_FEEDS = [
         "url": "https://www.reddit.com/r/WeirdNews/new/.rss",
         "color": "Reddit",
     },
-    # ── X / Twitter (via rss.app — reliable, requires free account) ───────
-    {
-        "name": "X: @Ozzny_CS2",
-        "url": "https://rss.app/feeds/VY7zKl7hjfy9WyF5.xml",
-        "color": "Twitter",
-    },
-    {
-        "name": "X: @CounterStrike",
-        "url": "https://rss.app/feeds/FYosc6FjucGIRXdP.xml",
-        "color": "Twitter",
-    },
+    # ── X / Twitter (via rss.app) ─────────────────────────────────────────
+    # CS2 news & community
+    {"name": "X: @Ozzny_CS2",     "url": "https://rss.app/feeds/VY7zKl7hjfy9WyF5.xml", "color": "Twitter"},
+    {"name": "X: @CounterStrike", "url": "https://rss.app/feeds/FYosc6FjucGIRXdP.xml", "color": "Twitter"},
+    {"name": "X: @HLTV_org",      "url": "https://rss.app/feeds/DrIzRbkxgpKizwLA.xml", "color": "Twitter"},
+    # Tournaments & platforms
+    {"name": "X: @ESL_CS",        "url": "https://rss.app/feeds/TywSQGTaORsXjvfA.xml", "color": "Twitter"},
+    {"name": "X: @FACEIT",        "url": "https://rss.app/feeds/0hqZEvaPR7w0e9hc.xml", "color": "Twitter"},
+    # Teams
+    {"name": "X: @NatusVincere",  "url": "https://rss.app/feeds/zBVD2kYCssHeAnLk.xml", "color": "Twitter"},
+    {"name": "X: @FaZeClan",      "url": "https://rss.app/feeds/8WVhdW2EqmY7NZtm.xml", "color": "Twitter"},
+    {"name": "X: @G2esports",     "url": "https://rss.app/feeds/6X42d21ORw8d1CTl.xml", "color": "Twitter"},
+    {"name": "X: @TeamVitality",  "url": "https://rss.app/feeds/5PC2EklyS1fybbxj.xml", "color": "Twitter"},
+    {"name": "X: @BIG_CS",        "url": "https://rss.app/feeds/BMwoMDxmUYtl1KxI.xml", "color": "Twitter"},
+    {"name": "X: @Astralis",      "url": "https://rss.app/feeds/EGx3l0n3y8Sq1Kp3.xml", "color": "Twitter"},
+    {"name": "X: @mousesports",   "url": "https://rss.app/feeds/RqGHhn12XW4NWPM1.xml", "color": "Twitter"},
+    # Weird / cultural
+    {"name": "X: @viewsceo",      "url": "https://rss.app/feeds/bVRX2LNj1dcWNYg1.xml", "color": "Twitter"},
+    {"name": "X: @BoredPanda",    "url": "https://rss.app/feeds/iypn6Y1DBp9YTw8f.xml", "color": "Twitter"},
+    {"name": "X: @LADbible",      "url": "https://rss.app/feeds/FkeHSOyCF2C1Exnw.xml", "color": "Twitter"},
 ]
